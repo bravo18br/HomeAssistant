@@ -11,7 +11,7 @@
 </head>
 
 <body class="antialiased container m-1" style="width:100vw;">
-    <img class="card" style="max-width: 96vw; opacity: 0.6; position: absolute; z-index: 0; top: 0; left: 0; right: 0; bottom: 0; margin: auto;" src="{{ asset ('/images/background.jpg') }}" />
+    <img class="card" style="max-width: 96vw; opacity: 0.6; position: absolute; z-index: 0; top: 0; left: 0; right: 0; bottom: 0; margin: auto;" src="{{ asset ('/storage/images/background.jpg') }}" />
     <div id="menu_principal">
         <div class="d-flex">
             <div id="card_localizacao_carro" class="card card_efeito text-center p-1 m-1" style="width:21rem;" data-bs-toggle="modal" data-bs-target="#Modal_card_localizacao_carro">
