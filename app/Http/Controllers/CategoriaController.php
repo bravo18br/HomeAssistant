@@ -3,17 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categoria;
-use App\Models\Conta;
 use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $data = ['categorias' => Conta::get()];
+        $data = ['categorias' => Categoria::get()];
         return view('conta.get_delete_categoria', $data);
     }
 
