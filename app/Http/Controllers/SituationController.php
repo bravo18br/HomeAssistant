@@ -7,59 +7,36 @@ use Illuminate\Http\Request;
 
 class SituationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        // $categorias = Categoria::get();
+        // return redirect()->route('conta.index',$categorias);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('conta.index');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        Situation::create($request->all());
+        return redirect()->route('conta.index');
     }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(Situation $situation)
     {
-        //
+        return $situation;
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Situation $situation)
     {
         //
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Situation $situation)
     {
-        //
+        $situation->update($request->all());
+        return redirect()->route('conta.index');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Situation $situation)
     {
-        //
+        $situation->delete();
+        return redirect()->route('conta.index');
     }
 }

@@ -8,7 +8,7 @@ use App\Http\Controllers\SituationController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 // Agrupamento das rotas relacionadas a 'conta'
 Route::prefix('conta')->group(function () {

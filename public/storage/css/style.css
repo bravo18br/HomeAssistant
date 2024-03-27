@@ -1,0 +1,31 @@
+html {
+    background-image: url('/storage/images/background-contas.jpg');
+    background-size: cover;
+}
+
+body{
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;   
+}
+
+.card_efeito:hover {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.8);
+    transition: box-shadow 0.5s ease;
+}
+
+.borda_amarela {
+    border: solid yellow 2px;
+}
+
+.borda_azul {
+    border: solid blue 2px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%; 
+}
+th, td {
+    padding: 1px; 
+    text-align: center; 
+}

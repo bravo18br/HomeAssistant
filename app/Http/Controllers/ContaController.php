@@ -2,64 +2,47 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Conta;
 use Illuminate\Http\Request;
+use App\Models\Conta;
+use App\Models\Categoria;
+use App\Models\Periodicidade;
+use App\Models\Situation;
 
 class ContaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $contas = Conta::get();
+        $categorias = Categoria::get();
+        $periodicidades = Periodicidade::get();
+        $situations = Situation::get();
+        return view('conta.index', compact('contas', 'categorias','periodicidades','situations'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('conta.index');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        Conta::create($request->all());
+        return redirect()->route('conta.index');
     }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(Conta $conta)
     {
-        //
+        return $conta;
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Conta $conta)
     {
         //
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Conta $conta)
+    public function update(Request $request, Conta $contum)
     {
-        //
+        $contum->update($request->all());
+        return redirect()->route('conta.index');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Conta $conta)
+    public function destroy(Conta $contum)
     {
-        //
+        $contum->delete();
+        return redirect()->route('conta.index');
     }
 }

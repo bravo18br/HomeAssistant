@@ -9,55 +9,40 @@ class CategoriaController extends Controller
 {
     public function index()
     {
-        $data = ['categorias' => Categoria::get()];
-        return view('conta.get_delete_categoria', $data);
+        // $categorias = Categoria::get();
+        // return redirect()->route('conta.index',$categorias);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('conta.put_post_categoria');
+        return view('conta.index');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        Categoria::create($request->all());
+        return redirect()->route('conta.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Categoria $categoria)
     {
-        //
+        return $categoria;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Categoria $categoria)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Categoria $categoria)
+    public function update(Request $request, Categoria $categorium)
     {
-        //
+        $categorium->update($request->all());
+        return redirect()->route('conta.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Categoria $categoria)
+    public function destroy(Categoria $categorium)
     {
-        //
+        $categorium->delete();
+        return redirect()->route('conta.index');
     }
 }

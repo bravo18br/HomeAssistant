@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('periodicidades', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 64);
+            $table->string('nome', 64)->unique();
             $table->timestamps();
         });
     }

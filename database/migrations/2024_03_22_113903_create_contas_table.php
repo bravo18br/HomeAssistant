@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string('nome',64);
             $table->float('valor_original',10,2);
             $table->dateTime('data_original');
-            $table->float('valor_pgmt',10,2);
-            $table->dateTime('data_pgmt');
-            $table->string('descricao');
-            $table->string('pdf');
+            $table->float('valor_pgmt',10,2)->nullable();
+            $table->dateTime('data_pgmt')->nullable();
+            $table->string('descricao')->nullable();
+            $table->string('pdf')->nullable();
             $table->integer('categoria_id');
             $table->integer('periodicidade_id');
             $table->integer('situation_id');
